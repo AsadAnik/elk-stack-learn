@@ -6,14 +6,14 @@ services:
     image: elasticsearch:7.9.2
     container_name: elasticsearch
     restart: always
+    networks:
+      - elk-stack
     ports:
       - 9200:9200
       - 9300:9300
     environment:
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
       - discovery.type=single-node
-    networks:
-      - elk-stack
 
   # region: Kibana
   kibana:
@@ -22,12 +22,12 @@ services:
     restart: always
     depends_on:
       - elasticsearch
-    ports:
-      - 5601:5601
     networks:
       - elk-stack
+    ports:
+      - 5601:5601
     environment:
-      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
+      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
 
 networks:
   elk-stack:

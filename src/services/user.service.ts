@@ -1,4 +1,6 @@
-import { IUser } from "../shared";
+import { v4 as uuidv4 } from "uuid";
+import { IUser, IUserRequest } from "../shared";
+
 
 class UserService {
     private users: IUser[] = [
@@ -30,6 +32,20 @@ class UserService {
     public getAllUsers(): IUser[] {
         return this.users;
     }
+
+    /**
+     * Create a user
+     * @param user - IUserRequest
+     */
+    public createUser(user: IUserRequest): void {
+        const newUser: IUser = {
+            id: uuidv4(),
+            ...user,
+            createdAt: new Date(),
+        }
+        this.users.push(newUser);
+    }
 }
 
 export default UserService;
+ 
