@@ -2,7 +2,7 @@
 
 Logging is the process of recording events, activities, and data points that occur within a software application or system. It provides a way to track and monitor the behavior, performance, and potential issues of an application over time.
 
-[Lecture - 131 | Hands on Logging using ELK Stack | Full-stack Army](https://youtu.be/swwx5GQUOAQ?si=ALgDUFweOB3yRA6c)
+<!-- [Lecture - 131 | Hands on Logging using ELK Stack | Full-stack Army](https://youtu.be/swwx5GQUOAQ?si=ALgDUFweOB3yRA6c) -->
 
 ### Key aspects of logging:
 
